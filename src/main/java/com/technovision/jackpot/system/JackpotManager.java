@@ -72,7 +72,7 @@ public class JackpotManager implements CommandExecutor {
                                 amt = Long.parseLong(args[1]);
                                 if (amt < 1) { throw new NumberFormatException(); }
                             } catch (NumberFormatException e) {
-                                player.sendMessage("§c§l(!) §c/jackpot buy <amount>");
+                                player.sendMessage("§cUsage: /lottery buy <amount>");
                                 return true;
                             }
                         }
@@ -87,17 +87,17 @@ public class JackpotManager implements CommandExecutor {
                             player.sendMessage(MessageHandler.parseBuyMessage("cannot-afford", amt));
                         }
                     } else if (args[0].equalsIgnoreCase("reload")) {
-                        if (player.hasPermission("jackpot.reload") || player.isOp()) {
+                        if (player.hasPermission("lottery.reload") || player.isOp()) {
                             PLUGIN.reloadConfig();
                             PLUGIN.saveConfig();
                             Bukkit.getServer().getPluginManager().disablePlugin(PLUGIN);
                             Bukkit.getServer().getPluginManager().enablePlugin(PLUGIN);
-                            player.sendMessage("§a§l(!) §aJackpot successfully reloaded the config.");
+                            player.sendMessage("§aYou have successfully reloaded the lottery configuration.");
                         } else {
-                            player.sendMessage("§c§l(!) §cYou do not have permission to use that command!");
+                            player.sendMessage("§cYou do not have permission to execute this command!");
                         }
                     } else {
-                        player.sendMessage("§c§l(!) §c/jackpot buy <amount>");
+                        player.sendMessage("§cUsage: /lottery buy <amount>");
                     }
                 } else {
                     long amount = 0;

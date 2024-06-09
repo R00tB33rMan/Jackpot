@@ -25,57 +25,65 @@
 #    > A tax-percent value of 0.10 is a 10% tax.
 # -----------------------------------------------------------
 jackpot:
-  ticket-price: 10000
-  draw-time: 10800
-  tax-percent: 0.10
+  ticket-price: 1000
+  draw-time: 3600
+  tax-percent: 0.1
   warnings:
-    - 3600
     - 1800
     - 600
     - 60
   confirm-gui: true
 messages:
-  buy-ticket: '&a&l(!) §aYou successfully purchased {amount} tickets for ${price}'
-  cannot-afford: '&c&l(!) §cYou cannot afford the total price of ${price} for {amount} tickets!'
+  buy-ticket: §aYou successfully purchased {amount} tickets for ${price}!
+  cannot-afford: §cYou cannot afford the total price of ${price} for {amount} tickets!
   jackpot-info:
     - ''
-    - '&e&lServer Jackpot'
-    - ' &b&lJackpot Value: &e${total-value} &7(-{tax}% tax)'
-    - ' &b&lTickets Sold: &e{total-tickets}'
-    - ' &b&lYour Tickets: &a{player-tickets} &7({player-percent}%)'
+    - '&e&lSERVER LOTTERY'
     - ''
-    - '&b&l(!) &bNext Winner in &n{timer}&r'
+    - '&fJackpot Value: &a${total-value} &7[-{tax}% Tax]'
+    - '&fTickets Sold: &e{total-tickets}'
+    - '&fYour Tickets: &c{player-tickets} &7[{player-percent}%]'
+    - ''
+    - '&fNext Winner in &e&n{timer}&f!'
     - ''
   jackpot-results:
     - ''
-    - '            &b&l(!) --- JACKPOT RESULTS --- &b&l(!)'
-    - '   &7Congratulation to &a{winner}&7 for winning the lottery!'
-    - '    &7A prize of &a${prize}&7 has been added to their balance.'
+    - '&c&lLOTTERY RESULTS'
+    - ''
+    - '&fCongratulations to &e{winner} &ffor winning the lottery!'
+    - '&fA prize of &a${prize} &fhas been added to their balance.'
     - ''
   jackpot-warning:
     - ''
-    - '&b&l(!) &bServer Jackpot (${total-value}) drawing in &l{timer}&b!'
-    - '&7Use &e/jackpot buy &7to purchase a ticket!'
+    - '&e&lSERVER LOTTERY WARNING'
+    - ''
+    - '&fA lottery valued at &a${total-value} &fis drawing in &e{timer}&f!'
+    - '&7To enter, use &f/lottery buy &7to purchase a ticket!'
     - ''
 confirm-gui:
-  title: 'Confirm {amount} Tickets'
+  title: Confirm | {amount} Tickets
   confirm-button:
-    material: 'LIME_STAINED_GLASS_PANE'
-    name: '&a&lConfirm Purchase'
+    material: LIME_STAINED_GLASS_PANE
+    name: '&a&lCONFIRM PURCHASE'
     lore:
-      - '&7Click to &aconfirm &7purchase of'
-      - '&a{amount} &7ticket(s) for &a${price}'
+      - '&8Description'
+      - ''
+      - '&fClick to &cconfirm &fpurchase of'
+      - '&e{amount} &fticket(s) for &a${price}&f!'
   cancel-button:
-    material: 'RED_STAINED_GLASS_PANE'
-    name: '&c&lCancel Purchase'
+    material: RED_STAINED_GLASS_PANE
+    name: '&c&lCANCEL PURCHASE'
     lore:
-      - '&7Click to &ccancel &7purchase of'
-      - '&c{amount} &7ticket(s) for &c${price}'
+      - '&8Description'
+      - ''
+      - '&fClick to &ccancel &fpurchase of'
+      - '&e{amount} &fticket(s) for &a${price}&f!'
   center-button:
-    material: 'BOOK'
-    name: '&e&l(!) Confirm Your Purchase (!)'
+    material: BOOK
+    name: '&e&lCONFIRMING YOUR PURCHASE'
     lore:
-      - '&7Select whether you would like to'
-      - '&7confirm or cancel your ticket purchase.'
-  cancel-message: '&c&l(!) &cYou have canceled your ticket purchase!'
-
+      - '&8Description'
+      - ''
+      - '&fSelect whether you would like to'
+      - '&aconfirm &for &ccancel &fyour ticket purchase.'
+  cancel-message: '&cYou have canceled your ticket purchase!'
